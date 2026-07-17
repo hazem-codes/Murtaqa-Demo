@@ -1,0 +1,14 @@
+{
+  "accountNumber": "300000001",
+  "sector": "retail_trade",
+  "cash_balance_sar": 412000.0,
+  "history_start": "2024-07",
+  "history_months": 24,
+  "expense_categories": [
+    "salaries",
+    "suppliers",
+    "rent",
+    "operations",
+    "other"
+  ]
+}

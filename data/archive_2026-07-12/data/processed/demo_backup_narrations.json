@@ -1,0 +1,149 @@
+{
+  "purpose": "Known-good Arabic narration text captured during Layer 3 testing, for use as a fallback if a live Ollama call fails during demo video recording. Not a substitute for a working live pipeline -- only a last-resort reference.",
+  "model": "iKhalid/ALLaM:7b",
+  "generated_by": "scripts/advisor_engine.py",
+  "note_on_personas": "No Khalid/Sarah/Nawah persona data exists in this project (Sarah's freelancer income category and Nawah's SME data track are not yet built). These narrations use the same generic sample account/loan profile advisor_engine.py's own demo block uses, not named personas.",
+  "narrations": {
+    "forecast": {
+      "account_number": "101380713",
+      "narration": "متوسط صافي التدفق النقدي الشهري المتوقع للأشهر الستة القادمة هو 17900.93 ريال. في الشهر الأول (2017-01)، نتوقع تدفق نقدي قدره 18117.12 ريال. لا يوجد توقع لأي فترة من التدفق السلبي خلال هذه الأشهر الستة.",
+      "verified_against": {
+        "avg_monthly_flow_forecast": 17900.930089285685,
+        "first_forecast_month": "2017-01",
+        "first_forecast_predicted_flow": 18117.11811637779,
+        "negative_months_ahead": 0
+      }
+    },
+    "top_categories": {
+      "account_number": "101380713",
+      "narration": "أكبر فئات الإنفاق الشهري تشمل التسوق بالتجزئة بمبلغ 833.03 ريال، تليها الوقود لوسائل النقل بمبلغ 690.52 ريال، ثم تناول الطعام في المقاهي بمبلغ 271.04 ريال.",
+      "verified_against": {
+        "top_categories": [
+          {
+            "category": "shopping_retail",
+            "avg_monthly_amount": 833.03
+          },
+          {
+            "category": "transportation_fuel",
+            "avg_monthly_amount": 690.52
+          },
+          {
+            "category": "dining_cafes",
+            "avg_monthly_amount": 271.04
+          }
+        ]
+      }
+    },
+    "counterfactual": {
+      "customer_profile": {
+        "person_age": 22,
+        "monthly_income_sar": 22483.75,
+        "home_ownership": "rent",
+        "employment_status": "employee",
+        "loan_amnt_sar": 131250.0,
+        "loan_int_rate": 16.02,
+        "loan_percent_income": 0.49,
+        "monthly_obligation_sar": 15513.79,
+        "dbr": 0.69,
+        "eligible_sama": 0
+      },
+      "narration": "العميل غير مؤهل حالياً بنسبة التزام 0.6900. هناك ثلاثة مسارات ليصبح مؤهلاً:\n1. تخفيض مبلغ التمويل من 131250.0 إلى 6324.0 ريال مع تقليل الالتزام الشهري من 15513.79 إلى 1068.1 ريال، مما يجعل نسبة الالتزام الجديدة 0.0475.\n2. تخفيض معدل الفائدة من 16.02% إلى 8.28%، مع تقليل الالتزام الشهري من 15513.79 إلى 6087.17 ريال، مما يجعل نسبة الالتزام الجديدة 0.2707.\n3. تخفيض الالتزام الشهري من 15513.79 إلى 5307.72 ريال، مما يجعل نسبة الالتزام الجديدة 0.2361.",
+      "verified_against": {
+        "current_dbr": 0.69,
+        "paths": [
+          {
+            "changed_features": {
+              "loan_amnt_sar": 6324.0,
+              "monthly_obligation_sar": 1068.1
+            },
+            "new_dbr": 0.0475,
+            "new_eligible": true
+          },
+          {
+            "changed_features": {
+              "loan_int_rate": 8.28,
+              "monthly_obligation_sar": 6087.17
+            },
+            "new_dbr": 0.2707,
+            "new_eligible": true
+          },
+          {
+            "changed_features": {
+              "monthly_obligation_sar": 5307.72
+            },
+            "new_dbr": 0.2361,
+            "new_eligible": true
+          }
+        ]
+      },
+      "reproducibility_note": "Requires counterfactual_engine.py's DICE_RANDOM_SEED=42 (added 2026-07-01). Without a fixed seed, dice_ml's random-method search is non-deterministic and this exact narration/numbers would not reliably reproduce for this customer_profile on a re-run."
+    }
+  },
+  "known_gaps": {
+    "counterfactual": "Resolved 2026-07-01: direction-inversion bug fixed via _validate_direction_claims() + DICE_RANDOM_SEED, see PROJECT_STATUS_REPORT.md for full details."
+  },
+  "business_plans": {
+    "account_number": "300000001",
+    "generated_by": "advisor_engine.generate_action_plans (ALLaM, format=json + temp 0, detailed few-shot), validated digit-free",
+    "note": "Pre-baked detailed AI action plans for the demo SME persona; served instantly. Real numbers injected into effect at serve time.",
+    "plans": [
+      {
+        "title": "إعادة هيكلة الذمم المدينة",
+        "summary": "تطوير نظام إدارة الذمم المدينة لتحسين كفاءة تحصيل المستحقات وتقليل فجوات السيولة الموسمية.",
+        "steps": [
+          "تحليل بيانات العملاء وتحديد أنماط السداد المتأخرة، وتصنيفهم حسب مستوى المخاطرة.",
+          "إنشاء خطة عمل مخصصة لكل عميل تتضمن إجراءات محددة لتقليل التأخير في السداد.",
+          "تنفيذ متابعة دورية مع العملاء لضمان الالتزام بالمواعيد الجديدة للسداد."
+        ],
+        "duration": "شهرين",
+        "difficulty": "متوسط",
+        "pros": [
+          "يقلل فجوات السيولة الموسمية ويحسن كفاءة إدارة الذمم المدينة.",
+          "يعزز الانضباط المالي ويقلل الاعتماد على التمويل الخارجي."
+        ],
+        "cons": [
+          "يتطلب موارد إضافية ووقتاً أطول للتنفيذ مقارنةً بالخطط الأخرى.",
+          "قد يؤثر سلباً على العلاقة مع بعض العملاء إذا لم تُنفذ الإجراءات بشكل مهني."
+        ]
+      },
+      {
+        "title": "زيادة المبيعات عبر العروض الترويجية",
+        "summary": "تعزيز مبيعات المنشأة من خلال تقديم عروض ترويجية جذابة للعملاء، مما يزيد التدفق النقدي ويقلل فجوات السيولة الموسمية.",
+        "steps": [
+          "تحديد المنتجات الأكثر مبيعاً وتصميم عروض ترويجية خاصة بها لجذب العملاء وتحفيزهم على الشراء.",
+          "إطلاق حملة تسويقية واسعة النطاق للترويج للعروض الجديدة عبر وسائل التواصل الاجتماعي والبريد الإلكتروني.",
+          "تقديم خصومات أو هدايا مجانية للعملاء الذين يشترون بكميات كبيرة لتعزيز المبيعات الكبيرة."
+        ],
+        "duration": "ثلاثة أشهر",
+        "difficulty": "متوسط",
+        "pros": [
+          "يزيد التدفق النقدي بشكل ملحوظ ويقلل فجوات السيولة الموسمية.",
+          "يعزز ولاء العملاء ويزيد من حجم المبيعات."
+        ],
+        "cons": [
+          "يتطلب استثمارات إضافية في التسويق والعروض الترويجية.",
+          "قد يؤثر سلباً على هامش الربح إذا لم تُدار العروض بحذر."
+        ]
+      },
+      {
+        "title": "تطوير نظام إدارة المخزون",
+        "summary": "تحسين كفاءة إدارة المخزون لتقليل التكاليف وتحسين التدفق النقدي، مما يقلل فجوات السيولة الموسمية.",
+        "steps": [
+          "إجراء تحليل شامل للمخزون الحالي لتحديد المنتجات ذات الحركة البطيئة أو الفائضة عن الحاجة.",
+          "تنفيذ إجراءات إعادة تنظيم المخزون بناءً على التحليل، مثل تقليل حجم بعض الأصناف أو نقلها إلى مواقع تخزين مختلفة.",
+          "تطوير نظام إدارة مخزون آلي يتتبع حركة البضائع ويقلل الهدر ويحسن كفاءة التخزين."
+        ],
+        "duration": "شهرين",
+        "difficulty": "متوسط",
+        "pros": [
+          "يقلل التكاليف التشغيلية ويحسن التدفق النقدي بشكل ملحوظ.",
+          "يعزز الانضباط المالي ويقلل الاعتماد على التمويل الخارجي."
+        ],
+        "cons": [
+          "يتطلب استثمارات إضافية في التكنولوجيا والموارد البشرية.",
+          "قد يتطلب تغييرات كبيرة في عمليات التخزين الحالية، مما قد يؤثر سلباً على كفاءة العمليات."
+        ]
+      }
+    ]
+  }
+}

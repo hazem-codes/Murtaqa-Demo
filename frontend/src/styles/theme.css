@@ -1,0 +1,181 @@
+/* ============================================================================
+   Murtaqa — Design Tokens
+   Warm creamy white + elegant brown/copper. Light mode only. RTL-first.
+   ============================================================================ */
+
+:root {
+  /* Surfaces */
+  --cream:        #FAF8F4;   /* page background */
+  --cream-deep:   #F4EEE6;   /* recessed panels / rails */
+  --sand:         #F1E9DE;   /* subtle warm fill */
+  --card:         #FFFFFF;   /* elevated cards */
+  --line:         #EBE4D9;   /* hairline borders */
+  --line-strong:  #DCD1C1;   /* stronger dividers */
+
+  /* Ink (text) */
+  --ink:          #23303C;   /* primary text — deep warm navy */
+  --ink-soft:     #6B6154;   /* secondary text — warm gray */
+  --ink-faint:    #A69B8C;   /* tertiary / placeholders */
+
+  /* Copper (brand primary) */
+  --copper:       #8B5E3C;
+  --copper-dark:  #6F4A2E;
+  --copper-deep:  #593A24;
+  --copper-light: #B8855A;
+  --copper-tint:  #F3EBE1;   /* soft copper wash for icon wells */
+
+  /* Espresso (dark surfaces — sidebar, hero panels) */
+  --espresso:     #23303C;
+  --espresso-2:   #2E3E4D;
+  --gold:         #D8B991;   /* warm accent on dark surfaces */
+
+  /* Semantic */
+  --positive:     #3F8E5F;
+  --positive-bg:  #EAF3ED;
+  --negative:     #C25A46;
+  --negative-bg:  #F7ECE9;
+  --warn:         #C08A3E;
+  --warn-bg:      #F7EFE1;
+
+  /* Chart palette — warm monochrome + 2 muted accents (teal, green) */
+  --chart-1: #8B5E3C;   /* copper */
+  --chart-2: #C9A87C;   /* sand */
+  --chart-3: #6F4A2E;   /* espresso-brown */
+  --chart-4: #5E8B87;   /* muted teal (accent) */
+  --chart-5: #7FA07C;   /* soft green (accent) */
+
+  --radius:      1rem;
+  --radius-lg:   1.5rem;
+  --radius-sm:   0.625rem;
+
+  /* Elevation — warm-tinted, layered in small steps so cards feel lifted
+     without a visible "shadow ring" (Notion-style stacking, warm hue) */
+  --shadow-sm:  0 1px 1px rgba(89, 58, 36, 0.03), 0 1px 3px rgba(89, 58, 36, 0.04), 0 2px 8px rgba(89, 58, 36, 0.03);
+  --shadow-md:  0 1px 2px rgba(89, 58, 36, 0.04), 0 4px 10px rgba(89, 58, 36, 0.05), 0 10px 24px rgba(89, 58, 36, 0.05);
+  --shadow-lg:  0 2px 4px rgba(89, 58, 36, 0.04), 0 8px 20px rgba(89, 58, 36, 0.07), 0 20px 48px rgba(89, 58, 36, 0.08);
+  --shadow-xl:  0 4px 8px rgba(89, 58, 36, 0.05), 0 16px 40px rgba(89, 58, 36, 0.09), 0 36px 88px rgba(89, 58, 36, 0.12);
+}
+
+/* Expose tokens to Tailwind v4 utilities (bg-cream, text-ink, border-line, ...) */
+@theme inline {
+  --color-cream:        var(--cream);
+  --color-cream-deep:   var(--cream-deep);
+  --color-sand:         var(--sand);
+  --color-card:         var(--card);
+  --color-line:         var(--line);
+  --color-line-strong:  var(--line-strong);
+
+  --color-ink:          var(--ink);
+  --color-ink-soft:     var(--ink-soft);
+  --color-ink-faint:    var(--ink-faint);
+
+  --color-copper:       var(--copper);
+  --color-copper-dark:  var(--copper-dark);
+  --color-copper-deep:  var(--copper-deep);
+  --color-copper-light: var(--copper-light);
+  --color-copper-tint:  var(--copper-tint);
+
+  --color-espresso:     var(--espresso);
+  --color-espresso-2:   var(--espresso-2);
+  --color-gold:         var(--gold);
+
+  --color-positive:     var(--positive);
+  --color-positive-bg:  var(--positive-bg);
+  --color-negative:     var(--negative);
+  --color-negative-bg:  var(--negative-bg);
+  --color-warn:         var(--warn);
+  --color-warn-bg:      var(--warn-bg);
+
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+
+  --radius-xl:  var(--radius-lg);
+  --radius-lg:  var(--radius);
+  --radius-md:  var(--radius-sm);
+
+  --shadow-soft:  var(--shadow-md);
+  --shadow-lift:  var(--shadow-lg);
+
+  --font-sans: "IBM Plex Sans Arabic", system-ui, sans-serif;
+
+  /* Motion keyframes usable as animate-* utilities */
+  --animate-float:      float 5s ease-in-out infinite;
+  --animate-pulse-ring: pulseRing 2.6s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+  --animate-shimmer:    shimmer 2.2s linear infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-6px); }
+}
+
+@keyframes pulseRing {
+  0%   { transform: scale(1);   opacity: 0.55; }
+  70%  { transform: scale(1.9); opacity: 0; }
+  100% { transform: scale(1.9); opacity: 0; }
+}
+
+@keyframes shimmer {
+  0%   { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+@layer base {
+  * {
+    border-color: var(--line);
+  }
+
+  html {
+    font-size: 16px;
+  }
+
+  html, body {
+    background-color: var(--cream);
+    color: var(--ink);
+    font-family: "IBM Plex Sans Arabic", system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  /* Arabic numerals stay legible & aligned in financial figures */
+  .tnum {
+    font-feature-settings: "tnum" 1;
+    font-variant-numeric: tabular-nums;
+    letter-spacing: 0;
+  }
+
+  ::selection {
+    background: var(--copper);
+    color: #fff;
+  }
+}
+
+/* Warm, slim scrollbars that fit the identity */
+@layer utilities {
+  .scroll-warm {
+    scrollbar-width: thin;
+    scrollbar-color: var(--line-strong) transparent;
+  }
+  .scroll-warm::-webkit-scrollbar { width: 8px; height: 8px; }
+  .scroll-warm::-webkit-scrollbar-thumb {
+    background: var(--line-strong);
+    border-radius: 999px;
+  }
+  .scroll-warm::-webkit-scrollbar-track { background: transparent; }
+
+  /* Hide scrollbar for horizontal chip rails while keeping scroll */
+  .no-scrollbar { scrollbar-width: none; }
+  .no-scrollbar::-webkit-scrollbar { display: none; }
+}
+
+/* Respect reduced-motion for the whole app (demo-safe, accessibility-safe) */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}

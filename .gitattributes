@@ -1,0 +1,5 @@
+data/raw/transactions.csv filter=lfs diff=lfs merge=lfs -text
+# The 61MB Kaggle transactions file was moved to the archive in the 2026-07-13 dataset rebuild.
+# It keeps the LFS treatment it already had at its old path -- without this, committing the
+# archive would push a 61MB raw blob into git history.
+data/archive_2026-07-12/data/raw/transactions.csv filter=lfs diff=lfs merge=lfs -text

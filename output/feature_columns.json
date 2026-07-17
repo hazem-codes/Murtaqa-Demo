@@ -1,0 +1,38 @@
+{
+  "feature_columns": [
+    "age",
+    "gross_salary_sar",
+    "mortgage_installment_sar",
+    "other_loan_installments_sar",
+    "credit_card_min_payment_sar",
+    "requested_loan_amount_sar",
+    "loan_int_rate",
+    "new_loan_installment_sar",
+    "salary_dbr",
+    "total_obligation_ratio",
+    "loan_percent_income",
+    "employment_type_employee",
+    "employment_type_retired",
+    "housing_status_mortgage",
+    "housing_status_rent"
+  ],
+  "numeric_features": [
+    "age",
+    "gross_salary_sar",
+    "mortgage_installment_sar",
+    "other_loan_installments_sar",
+    "credit_card_min_payment_sar",
+    "requested_loan_amount_sar",
+    "loan_int_rate",
+    "new_loan_installment_sar",
+    "salary_dbr",
+    "total_obligation_ratio",
+    "loan_percent_income"
+  ],
+  "categorical_features": [
+    "employment_type",
+    "housing_status"
+  ],
+  "encoding": "one_hot_drop_first_false",
+  "target_column": "eligible_sama"
+}

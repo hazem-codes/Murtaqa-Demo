@@ -1,0 +1,69 @@
+Role: You are an expert UI/UX designer specialized in Open Banking and premium Arabic fintech platforms.
+
+Project: "Murtaqa" (مُرتقى) — an Arabic-only (full RTL) web platform acting as a smart financial guide and personal financial analyst, built on Open Banking technology. Audience: an academic/investment judging panel. Goal: screens will be recorded for a 2-3 minute demo video.
+
+Technical constraints:
+- Build everything inside a SINGLE Figma file (Free plan), using separate Pages within that one file for each screen — do NOT create multiple files.
+- Use Auto Layout on every frame to ensure responsive structure.
+- Create simple reusable base components instead of duplicating elements manually: primary button, secondary button, info card, stat card, progress bar, chat input field, top profile icon.
+
+Visual identity:
+- Tone: premium Saudi banking, calm, professional, no exaggerated colors or motion.
+- Core colors: warm off-white/cream background (#FAF9F7), warm copper/brown as primary brand color (#8B5E3C or similar), deep navy as secondary color for headings and important text (#1C2B39), light gray for borders and secondary backgrounds (#E8E4DE). Do not use bright or multiple accent colors.
+- Inspiration: Alinma Bank's identity (luxury, copper tones, visual calm), Al Rajhi Bank's page organization (clarity, trust), Tamara's way of presenting "plans/paths" as horizontal cards with numbered steps, and Notion's calm whitespace and dashboard organization.
+- Typography: use a modern, clean Arabic font with full correct RTL support (e.g. IBM Plex Sans Arabic, Cairo, or Tajawal). All Arabic text and numbers must render correctly, never overlapping or broken.
+- Mode: Light mode only for now.
+- Medium soft corner radius (not sharp, not overly rounded), very subtle shadows only where needed (slightly elevated cards), no heavy glassmorphism.
+
+Logo: "مُرتقى" in bold clear type, with a smaller, lighter subtitle directly under it: "مرشدك المالي".
+
+---
+
+Required screens (6 screens, each as a separate Page within the same file):
+
+### 1) Landing Page
+- Sticky top header: logo on the right (RTL layout), simple circular profile icon on the opposite side (no complex login menu, just a small elegant icon).
+- Hero section with a strong headline explaining the idea within seconds (smart financial guide powered by Open Banking), with a prominent primary CTA button in the copper brand color.
+- A section visually showcasing all core services (icon cards): financial forecasting, spending analysis, financing eligibility, smart paths, smart advisor chat.
+- Category selection section: 4 large clear cards (Individuals, Freelancers, Small Business, Medium Business). The "Individuals" card is fully active/enabled visually (full color, clear button), while the other 3 cards are clearly shown in a Disabled state (reduced opacity, small elegant "Coming Soon" badge) to honestly reflect that the project is 30-50% complete.
+- Simple footer with a small logo and a short disclaimer note that this is a demo/experimental project.
+
+### 2) Demo Login Screen
+- Simple, clean, centered layout with a small top tab selector matching the category chosen previously (Individuals / Businesses / Freelancer).
+- Cosmetic (non-functional) username/password fields.
+- Primary button labeled "Try as Guest" or "Enter Demo" (NOT "Login", to avoid implying real authentication).
+- Small elegant badge above the card reading "Demo Version".
+
+### 3) Main Dashboard
+- After "connecting bank account" (a mock button shown first at the top, e.g. "Connect your bank account now via Open Banking"; clicking it visually shows a "Connected" state before revealing the rest of the content).
+- Top row of quick stat cards: Monthly Income, Total Spending, Monthly Obligations, Current Loans.
+- A prominent circular visual card showing "Financing Eligibility Percentage" (with a simple toggle to switch between Personal Financing and Mortgage Financing).
+- An elegant progress bar with a subtle visual hint (small icon or star) implying a future gamification element, without full complexity yet.
+- A compact section summarizing the latest advisor recommendation, with a "Go to Full Chat" button.
+- Overall layout uses clean, well-spaced cards (inspired by Notion's calm structure).
+
+### 4) Detailed Financial Analysis Screen
+- An elegant line or bar chart showing income vs. spending over months.
+- A donut chart showing spending category breakdown (housing, shopping, bills, entertainment, etc.) using shades from the same brand palette (copper/navy/gray), no bright colors.
+- A clean list of small cards for recent transactions.
+- A short, elegant analytical text (1-2 lines) explaining the financial situation in simple language, written as if an advisor is speaking — not just raw numbers.
+
+### 5) Eligibility & Smart Paths Screen
+- Top: a large clear circular indicator showing current eligibility percentage (percentage + color reflecting status).
+- Below: 3 horizontal path cards inspired by Tamara's style, each showing clear numbered steps ("From No to Yes"), with an estimated expected impact per path.
+- When a path is selected, show a clear "Path Selected" badge and a small progress card mockup illustrating how this path will later appear inside the dashboard as an active tracked goal.
+
+### 6) Smart Advisor Chat Screen
+- A full modern chat interface: clear message bubbles (user messages on one side, advisor messages on the other, respecting RTL alignment), a bottom input field, and quick suggested questions above the input field (e.g. "Why am I not eligible?", "How can I become eligible?", "What are my biggest expenses?").
+- Add a simple, elegant visual identity for the advisor (a calm circular icon, not cartoonish) to reinforce that this is a real guide and analyst, not just a calculator.
+
+### 7) Profile Screen (accessed via the top profile icon on all internal screens)
+- Simple layout: avatar/initial, username, category label (Individuals), and a short menu (Settings, Exit Demo).
+
+---
+
+Final execution notes:
+- Maintain full consistency in colors, typography, and spacing across all 6 screens.
+- All Arabic text must be grammatically correct and never cut off or overlapping.
+- Do not use any real bank logos (no Alinma or any real bank branding) — only draw inspiration from their visual tone.
+- Name and organize all layers clearly in English (Header, Hero, Dashboard-Card, etc.) to make the file easy to read later via Figma Dev Mode.

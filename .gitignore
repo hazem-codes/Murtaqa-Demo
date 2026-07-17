@@ -1,0 +1,8 @@
+__pycache__/
+.claude/scheduled_tasks.lock
+data/roadmap_progress/
+frontend/node_modules/
+frontend/dist/
+frontend/.dev.log
+frontend/.dev.err.log
+frontend/.dev2.log

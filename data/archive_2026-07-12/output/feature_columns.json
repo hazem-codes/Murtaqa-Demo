@@ -1,0 +1,32 @@
+{
+  "feature_columns": [
+    "person_age",
+    "monthly_income_sar",
+    "loan_amnt_sar",
+    "loan_int_rate",
+    "loan_percent_income",
+    "monthly_obligation_sar",
+    "dbr",
+    "home_ownership_mortgage",
+    "home_ownership_other",
+    "home_ownership_own",
+    "home_ownership_rent",
+    "employment_status_employee",
+    "employment_status_retired"
+  ],
+  "numeric_features": [
+    "person_age",
+    "monthly_income_sar",
+    "loan_amnt_sar",
+    "loan_int_rate",
+    "loan_percent_income",
+    "monthly_obligation_sar",
+    "dbr"
+  ],
+  "categorical_features": [
+    "home_ownership",
+    "employment_status"
+  ],
+  "encoding": "one_hot_drop_first_false",
+  "target_column": "eligible_sama"
+}
